@@ -1,29 +1,9 @@
-<div class="row nba-form-section mt-5">
-    <div class="col-12 col-md-8 col-lg-6 mx-auto p-4 shadow rounded bg-white">
-
-        {{-- 
-            FORM 
-            Assegniamo al form un comportamento di submit tramite wire:submit.
-            Al posto della classica action che richiama una rotta, utilizziamo wire:submit,
-            che collega il form a una funzione (in questo caso articleStore) nel componente Livewire.
-
-            La direttiva wire:model viene utilizzata per associare un tag input a un attributo pubblico
-            del componente Livewire. Quando l’utente inserisce un valore nell’input, Livewire lo sincronizza 
-            con l’attributo specificato nel file CreateArticle.php.
-        --}}
+<div class="row nba-form-section ">
+    <div class="col-12 col-md-10 col-lg-8 mx-auto p-4 shadow rounded bg-white">
 
         <!-- Inizio form -->
-        <form class="nba-form" enctype="multipart/form-data" wire:submit.prevent="articleStore">
-            {{-- wire:submit fa scattare la funzione store al submit del form --}}
-            {{-- Con wire:model colleghiamo gli input agli attributi Livewire --}}
-            {{-- wire:submit.prevent="articleStore" → articleStore è il nome della funzione --}}
+        <form class="nba-form" enctype="multipart/form-data" wire:submit.prevent="articleUpdate">
 
-            {{-- 
-                Qui sto gestendo eventuali errori di validazione.
-                any è un metodo che dice: "se c'è qualunque errore allora fai qualcosa",
-                e in questo caso creo un div.
-                @foreach ($errors->all() as $error) crea per ogni errore un list item con il messaggio.
-            --}}
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -63,8 +43,19 @@
             </div>
 
             <!-- CAMPO IMG -->
+            <!-- Questo articolo ha un'immagine associata? se sì allora fai qualcosa.. -->
+            <div class="mb-3 text-center">
+                @if ($article->img)
+                    <p class="h5">Vecchia immagine:</p>
+                    <img class="img-fluid rounded" style="max-height: 300px;" src="{{ Storage::url($article->img) }}" alt="Immagine di {{ $article->title }}">
+                @else
+                    <p class="text-center">L'articolo non ha immagini associate</p>
+                @endif                
+            </div>
+
+            <!-- CAMPO IMG -->
             <div class="mb-3">
-                <label for="img" class="form-label fw-bold text-primary">Inserisci un'immagine:</label>
+                <label for="img" class="form-label fw-bold text-primary">Modifica</label>
                 <input 
                     wire:model="img"  
                     id="img"              

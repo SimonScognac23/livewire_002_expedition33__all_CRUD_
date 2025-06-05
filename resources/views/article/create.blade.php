@@ -1,17 +1,13 @@
 <x-layout>
-    <div class="container pt-3">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">
-                <h1 class="display-4 pt-5 text-white">
-                    Pubblica un articolo
-                </h1>
-            </div>
-        </div>
-    </div>
 
-    <div class="row justify-content-center align-items-center height-custom bg-whisper">
-        <div class="col-12 col-md-6">
-            <livewire:article-create />
+       
+                <div class="card bg-light border-dark shadow">
+                    <div class="card-body p-4">
+                        <livewire:article-create />
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </x-layout>

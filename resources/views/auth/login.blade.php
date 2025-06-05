@@ -1,32 +1,36 @@
 <x-layout>
- 
-   
 
-    <!-- FORM DI LOGIN -->
-    <div class="row justify-content-center login-mg">
-      <!-- Colonna per form con larghezza più ampia -->
-      <div class="col-12 col-md-6 col-lg-5">
-        <form action="{{ route('login') }}" method="POST" class="p-4 border rounded form-psycho shadow bg-white text-dark">
-          @csrf
+    <!-- Contenitore principale centrato -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            
+            <!-- Colonna responsiva -->
+            <div class="col-12 col-md-6 col-lg-5">
+                
+                <!-- Form con bordi neri, sfondo bianco e ombra -->
+                <form action="{{ route('login') }}" method="POST" class="p-4 border border-dark rounded shadow bg-white text-dark">
+                    @csrf
 
-          <!-- CAMPO EMAIL -->
-          <div class="mb-3 text-start">
-            <label for="email" class="form-label label-psycho">Email</label>
-            <input type="email" name="email" class="form-control input-psycho" id="email" placeholder="Inserisci la tua email" required>
-          </div>
+                    <!-- Campo Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label fw-semibold text-black">Email</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Inserisci la tua email" required>
+                    </div>
 
-          <!-- CAMPO PASSWORD -->
-          <div class="mb-3 text-start">
-            <label for="password" class="form-label label-psycho">Password</label>
-            <input type="password" name="password" class="form-control input-psycho" id="password" placeholder="Inserisci la tua password" required>
-          </div>
+                    <!-- Campo Password -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label fw-semibold text-black">Password</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Inserisci la tua password" required>
+                    </div>
 
-          <!-- BOTTONE LOGIN -->
-          <div class="d-grid">
-            <button type="submit" class="btn btn-psycho btn-lg text-dark">Login</button>
-          </div>
-        </form>
-      </div>
+                    <!-- Bottone di invio -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-outline-dark btn-lg">Login</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
     </div>
 
 </x-layout>

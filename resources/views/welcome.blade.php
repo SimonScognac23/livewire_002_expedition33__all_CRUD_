@@ -1,43 +1,40 @@
 <x-layout>  
 
-    <div class="container-fluid bg-body-secondary vh-100 p-0">
-        <div class="row justify-content-center align-items-center h-100">
-  
+    {{-- Sezione fullscreen con sfondo grigio chiaro --}}
+    <div class="container-fluid bg-body-secondary vh-100 p-0 d-flex align-items-center justify-content-center">
+        <div class="row w-100 justify-content-center">
             <div class="col-12 text-center">
 
-            
-                <h1 class="py-5 text-black">
-                   Welcome
-                </h1>
-
-              
-                <div class="image-container">
-                    <img src="https://c.wallhere.com/photos/6b/dc/Attack_on_Titans_Shingeki_no_Kyojin_anime-1858365.jpg!d" 
-                         alt="Descrizione immagine" 
-                         class="img-fluid">
+                {{-- Immagine grande e centrata --}}
+                <div class="image-container p-3">
+                    <img 
+                        src="https://static1.srcdn.com/wordpress/wp-content/uploads/2025/04/clair-obscur-esquie-with-the-crew-in-baguette-outfits.jpg?q=70&fit=crop&w=1140&h=&dpr=1" 
+                        alt="Descrizione immagine" 
+                        class="img-fluid w-100 custom-image"
+                    >
                 </div>
 
             </div>
         </div>
     </div>
 
+    {{-- Sezione contenuti con margine verticale --}}
+    <div class="container my-5">
 
-
-<div class="row justify-content-center">
-       <div class="col-12">
-
-             <x-flash-messages />
-
+        {{-- Flash message --}}
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <x-flash-messages />
+            </div>
         </div>
-</div>
 
-<div>
-    <livewire:article-index>
-</div>
-
-   
-
-
-
+        {{-- Livewire: elenco articoli --}}
+        <div class="row">
+            <div class="col-12">
+                <livewire:article-index />
+            </div>
+        </div>
+        
+    </div>
 
 </x-layout>

@@ -22,8 +22,10 @@ return new class extends Migration
         });
     }
 
-    // SET NULL va inserito nel caso in cui viene cancellato il riferimento verra semplicemente segnato come null e non verra cancellato anche il singolo articolo
+    // SET NULL va inserito nel caso in cui viene cancellato il riferimento
+    // verrà semplicemente segnato come null e non verrà cancellato anche il singolo articolo
     // on indica a quale tabella si sta referendo la foreign key user_id
+
     /**
      * Reverse the migrations.
      */

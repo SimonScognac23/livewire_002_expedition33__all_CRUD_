@@ -9,11 +9,9 @@
       <!-- SECTION: Colonna responsive che contiene titolo, form e logo -->
       <div class="col-12 col-md-8 col-lg-6 position-relative">
 
-        <!-- Aggiungi il logo piccolo a destra -->
-        <img src="https://s1.qwant.com/thumbr/474x474/2/b/d77af1c290d20aaa0e12b8a5150b93d0e9eba985e668e2d2ec50eda84824d1/th.jpg?u=https%3A%2F%2Ftse.mm.bing.net%2Fth%3Fid%3DOIP.4-41y33sDZ1BAWEjAYQaSwHaHa%26pid%3DApi&q=0&b=1&p=0&a=0.jpg" alt="Logo" class="logo">
-
+  
         <!-- SECTION: Titolo della pagina -->
-        <h1 class="mb-4 text-uppercase fw-bold custom-subtitle text-white">
+        <h1 class="mb-4 text-uppercase fw-bold custom-subtitle text-black">
           Registrati
         </h1>
 

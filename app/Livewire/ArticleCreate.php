@@ -26,7 +26,8 @@ class ArticleCreate extends Component
     protected $rules = [
         'title' => 'required',
         'body'  => 'required',
-        'img' => 'nullable|image|max:2048',
+      'img' => 'nullable|image',
+
     ];
 
     //*.required il protected vale per ogni singolo campo sia di body,title
@@ -58,22 +59,30 @@ class ArticleCreate extends Component
         } 
 
 
-
         //Creo un nuovo oggetto di classe Article
         //Richiamo la classe Article con il metodo create
 
-        $this->article = Article::create([
+     $article = Article::create([
             'title'   => $this->title,
             'body'    => $this->body,
             'user_id' => $this->user_id,
 
           
 
-            'img'     => !$this->img ? null : $this->img->store('img', 'public')
+           'img' => $this->img ? $this->img->store('img', 'public') : null
+
+     
+
+
+
             //Se non è stata inserita un immagine allora '?'  metteremo nel DB null, infatti durante la migrazione abbiamo reso questo campo nullable
             // alternativamente ':' se l'utente ha inserito un immagine la salveremo nello storage richiamando il $this->img e concateno il metodo store specificando dove verra salvata 
             // verra salvata nella cartella public  e nella sottocartella che si andra a creare  che si chiama img
         ]);
+
+    
+
+
 
         return redirect()->route('homepage')->with('successMessage', 'Articolo creato');
     }

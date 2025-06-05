@@ -2,7 +2,9 @@
 
 namespace App\Livewire;
 
-use App\Models\Article; // <-- CORRETTO
+
+
+use App\Models\Article; 
 use Livewire\Component;
 
 class ArticleIndex extends Component
