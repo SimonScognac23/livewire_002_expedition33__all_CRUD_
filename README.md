@@ -1,3 +1,7 @@
+
+CARICAMENTO IMMAGINI FUNZIONA!!!!!!!!
+
+
 Italiano
 In questo progetto ho implementato un sistema CRUD completo per la gestione degli articoli utilizzando Laravel con Livewire e Fortify per l’autenticazione. Ho creato rotte dedicate per la visualizzazione, creazione, modifica e cancellazione degli articoli, integrando la logica direttamente nei componenti Livewire per garantire un’esperienza utente fluida e reattiva senza ricaricare la pagina.
 
